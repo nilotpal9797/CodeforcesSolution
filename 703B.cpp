@@ -53,28 +53,28 @@ int main(){
  map<int,int> M;
  vector<ll> v;
  ll b[100006];
- //ll cap[100006]={0};
  for(int i=1;i<=n;i++){
   cin >> b[i];sum+=b[i];
 }
   ll x;
-  for(int i=0;i<k;i++){cin >> x;M[x]=1;v.pb(x);}
+  for(int i=0;i<k;i++){
+    cin >> x;
+    M[x]=1;
+    v.pb(x);
+  }
+  
  for(int i=1;i<=n;i++){
    if(i==n)ans+=b[i]*b[1];
    else ans+=b[i]*b[i+1];
  }
- //cout << "ans is "<<ans << endl;
  int p,nx;ll tmp;
  if(n==3){cout<<ans<<endl;return 0;}
  for(int i=0;i<v.size();i++){
-   int y=v[i];
    if(v[i]==n){p=n-1;nx=1;}
    else if(v[i]==1){p=n;nx=2;}
    else{p=v[i]-1;nx=v[i]+1;}
    tmp=dia;
    if(M[p]==1)tmp-=b[p];
-   //if(M[nx]==1)tmp-=b[nx];
-   //if()
     ans+=(b[v[i]]*(sum-b[v[i]]-b[p]-b[nx]-tmp));
     dia+=b[v[i]];
  }
