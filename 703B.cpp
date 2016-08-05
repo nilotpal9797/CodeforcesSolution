@@ -45,16 +45,14 @@ typedef vector<int> vi;
 
 int main(){
  int n,k;
- ll sum=0;
- ll dia=0;
- ll ans=0;
- cin >> n;
- cin >> k;
+ ll sum=0,dia=0,ans=0;
+ cin >> n >> k;
  map<int,int> M;
  vector<ll> v;
  ll b[100006];
  for(int i=1;i<=n;i++){
-  cin >> b[i];sum+=b[i];
+   cin >> b[i];
+   sum+=b[i];
 }
   ll x;
   for(int i=0;i<k;i++){
@@ -64,8 +62,10 @@ int main(){
   }
   
  for(int i=1;i<=n;i++){
-   if(i==n)ans+=b[i]*b[1];
-   else ans+=b[i]*b[i+1];
+   if(i==n)
+     ans+=b[i]*b[1];
+   else 
+    ans+=b[i]*b[i+1];
  }
  int p,nx;ll tmp;
  if(n==3){cout<<ans<<endl;return 0;}
