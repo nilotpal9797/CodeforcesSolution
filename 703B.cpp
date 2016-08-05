@@ -45,7 +45,7 @@ typedef vector<int> vi;
 
 int main(){
  int n,k;
- ll sum=0,dia=0,ans=0;
+ ll sum=0,dia=0,ans=0,x;
  cin >> n >> k;
  map<int,int> M;
  vector<ll> v;
@@ -54,7 +54,6 @@ int main(){
    cin >> b[i];
    sum+=b[i];
 }
-  ll x;
   for(int i=0;i<k;i++){
     cin >> x;
     M[x]=1;
