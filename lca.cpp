@@ -38,25 +38,21 @@ int lca(int a,int b){
    int t;
    t=a;a=b;b=t;
   }
- // cout << "level of a and b is "<<lev[a]<<" "<< lev[b]<<endl;
  int l=1;
  for(l=1;1<<l < lev[a];l++);
  l--;
-// cout <<"l here is " << l << endl;
  for(int i=l;i>=0;i--)
   if(lev[a]-(1<<i) >= lev[b])
     a=dp[a][i];
-// cout << "a here is " << a << endl;
  if(a==b)return a;
  for(int i=l;i>=0;i--)
   if(dp[a][i]!=-1 && dp[a][i]!=dp[b][i]){
-    a=dp[a][i];b=dp[b][i];//cout<<"yoyo"<< endl;
+    a=dp[a][i];b=dp[b][i];
   }
  return dp[a][0];
 }
 
 int main(){
- //int n;
  cin >> n;
  int x,y;
  memset(vis,0,sizeof(vis));
