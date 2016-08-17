@@ -24,9 +24,9 @@ void dfs(int s,int p,int d){
 
 int main(){
  int n,m,a,x,y;
- cin >> n;
+ cin >> n; // No of nodes in the tree
  for(int i=0;i<n-1;i++){
-    cin >> x >> y >> a;
+    cin >> x >> y >> a; // x is connected to y and wt of the edge is a
     G[x].pb(mp(a,y));
     G[y].pb(mp(a,x));
  }
