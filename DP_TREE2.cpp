@@ -50,7 +50,7 @@ int lca(int u,int v){
        u=dp[u][i];
   if(u==v)return u;
   for(int i=l;i>=0;i--)
-    if(dp[u][v]!=-1 && dp[u][i]!=dp[v][i]){
+    if(dp[u][i]!=-1 && dp[u][i]!=dp[v][i]){
        u=dp[u][i];v=dp[v][i];
     }
   return dp[u][0];
